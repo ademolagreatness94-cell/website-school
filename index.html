@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unique StarLight Academy</title>
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+     background: #eef2f7;
+     color: #2c2c2c;
+     line-height: 1.7;
+     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+     scroll-behavior: smooth;
+   }
+
+
+    /* ===== HEADER ===== */
+    header {
+     background: linear-gradient(135deg, #0a4db8, #06357a);
+     color: white;
+     padding: 40px 20px;
+     text-align: center;
+    }
+
+    header h1 {
+     font-size: 2.2rem;
+     margin-bottom: 8px;
+    }
+
+    header p {
+     font-size: 1.1rem;
+     opacity: 0.9;
+    }
+
+
+    /* ===== NAV ===== */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #083a8c;
+      padding: 10px;
+    }
+
+    nav button {
+     background: white;
+     border: none;
+     padding: 12px 18px;
+     cursor: pointer;
+     font-weight: 600;
+     border-radius: 25px;
+     transition: all 0.3s ease;
+    }
+
+    nav button:hover {
+     background: #ffd700;
+     transform: translateY(-2px);
+    }
+
+    nav button.active {
+     background: #ffd700;
+     color: #000;
+    }
+
+
+
+    /* ===== MAIN CONTENT ===== */
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    section {
+      display: none;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+         opacity: 0;
+         transform: translateY(10px);
+        }
+      to {
+         opacity: 1;
+         transform: translateY(0);
+        }
+    }
+
+
+    section.active {
+      display: block;
+    }
+
+    section h2 {
+      color: #0a4db8;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0a4db8;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+     nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+     nav button {
+        width: 90%;
+    }
+   }
+
+   ul {
+     margin-top: 10px;
+    }
+
+   ul li {
+     margin-bottom: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Unique StarLight Academy</h1>
+    <p>Quality Education for Tomorrow's Leaders</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('primary')">Primary School</button>
+    <button onclick="showSection('secondary')">Secondary School</button>
+    <button onclick="showSection('admissions')">Admissions</button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="active">
+      <h2>Welcome</h2>
+      <p>
+        Unique StarLight Academy provides quality education from Primary to Secondary level.
+        We focus on academic excellence, discipline, and moral values.
+      </p>
+    </section>
+
+    <!-- PRIMARY SCHOOL -->
+    <section id="primary">
+      <h2>Primary School</h2>
+      <p>
+        Our Primary School builds a strong foundation in learning and character.
+      </p>
+      <ul>
+        <li>Nursery to Primary 6</li>
+        <li>Experienced teachers</li>
+        <li>Interactive learning</li>
+        <li>Sports and creative activities</li>
+      </ul>
+    </section>
+
+    <!-- SECONDARY SCHOOL -->
+    <section id="secondary">
+      <h2>Secondary School</h2>
+      <p>
+        Our Secondary School prepares students for higher education and real-life challenges.
+      </p>
+      <ul>
+        <li>Junior & Senior Secondary</li>
+        <li>Science, Arts & Commercial subjects</li>
+        <li>Well-equipped laboratories</li>
+        <li>Career guidance</li>
+      </ul>
+    </section>
+
+    <section id="admissions">
+     <h2>Admissions</h2>
+     <p>Admissions are open for Primary and Secondary School.</p>
+      <ul>
+         <li>Completed application form</li>
+         <li>Birth certificate</li>
+         <li>Previous school report</li>
+         <li>Entrance assessment</li>
+      </ul>
+</section>
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Unique StarLight Academy. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll("section");
+    const buttons = document.querySelectorAll("nav button");
+
+    sections.forEach(section => section.classList.remove("active"));
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(sectionId).classList.add("active");
+
+    event.target.classList.add("active");
+  }
+</script>
+</script>
+
+</body>
+</html>
